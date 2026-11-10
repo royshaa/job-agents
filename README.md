@@ -26,3 +26,19 @@ Built as a hands-on project to practice modern .NET, containers, CI/CD and multi
 - [ ] Phase 5: Multi-agent system over RabbitMQ
 - [ ] Phase 6: Kubernetes and Helm
 - [ ] Phase 7: Observability and polish
+
+## TFVC to Git
+
+| TFVC | Git |
+| --- | --- |
+| Workspace | `git clone` (local copy of the repo) |
+| Get Latest | `git pull` |
+| Pending Changes | `git status`, `git diff` |
+| Check-in | `git commit` + `git push` |
+| Changeset | Commit |
+| View History | `git log` |
+| Shelveset | `git stash` (local only), or a pushed branch + PR (shared, for review) |
+| Branch (server folder) | `git switch -c <branch>` (a pointer, not a folder) |
+| Undo Pending Changes | `git restore <file>` |
+| Annotate | `git blame <file>` |
+| Rollback | `git revert <commit>` |
