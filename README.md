@@ -31,13 +31,14 @@ Built as a hands-on project to practice modern .NET, containers, CI/CD and multi
 
 | TFVC | Git |
 | --- | --- |
-| Workspace | Repo |
-| Get Latest | pull |
-| Pending Changes | status |
-| Check-in | git commit |
-| Changeset | git log --oneline --all --graph|
-| Shelveset | stash |
-| Branch (server folder) | |
-| Undo Pending Changes | git log --oneline --all --graph |
-| Annotate | git diff |
-| Rollback | git branch -D |
+| Workspace | `git clone` (local copy of the repo) |
+| Get Latest | `git pull` |
+| Pending Changes | `git status`, `git diff` |
+| Check-in | `git commit` + `git push` |
+| Changeset | Commit |
+| View History | `git log` |
+| Shelveset | `git stash` (local only), or a pushed branch + PR (shared, for review) |
+| Branch (server folder) | `git switch -c <branch>` (a pointer, not a folder) |
+| Undo Pending Changes | `git restore <file>` |
+| Annotate | `git blame <file>` |
+| Rollback | `git revert <commit>` |
