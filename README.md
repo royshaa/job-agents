@@ -17,7 +17,7 @@ Built as a hands-on project to practice modern .NET, containers, CI/CD and multi
 
 ## Roadmap
 
-- [ ] Phase 0: Git and GitHub workflow
+- [x] Phase 0: Git and GitHub workflow
 - [ ] Phase 1: .NET 10 API with EF Core, DI, async and tests
 - [ ] Phase 2: Docker and docker-compose
 - [ ] Phase 2.5: Legacy integration with CoreWCF and gRPC
