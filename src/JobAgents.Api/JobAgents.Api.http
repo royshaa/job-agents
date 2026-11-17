@@ -1,6 +1,70 @@
-@JobAgents.Api_HostAddress = http://localhost:5091
+@JobAgents.Api_HostAddress = https://localhost:7109
 
-GET {{JobAgents.Api_HostAddress}}/weatherforecast/
+### get all
+GET {{JobAgents.Api_HostAddress}}/api/job-postings
 Accept: application/json
 
-###
+### create
+# @name createPosting
+POST {{JobAgents.Api_HostAddress}}/api/job-postings
+Content-Type: application/json
+
+{
+  "title": "Senior .NET Developer",
+  "company": "Contoso"
+}
+
+### get the posting just created (send "create" first)
+GET {{JobAgents.Api_HostAddress}}/api/job-postings/{{createPosting.response.body.$.id}}
+
+### not found
+GET {{JobAgents.Api_HostAddress}}/api/job-postings/999
+
+### not a number
+GET {{JobAgents.Api_HostAddress}}/api/job-postings/abc
+
+### validation 1: empty title
+POST {{JobAgents.Api_HostAddress}}/api/job-postings
+Content-Type: application/json
+
+{
+  "title": "",
+  "company": "Contoso"
+}
+
+### validation 2: whitespace title
+POST {{JobAgents.Api_HostAddress}}/api/job-postings
+Content-Type: application/json
+
+{
+  "title": "   ",
+  "company": "Contoso"
+}
+
+### validation 3: title too long (paste 300 chars)
+POST {{JobAgents.Api_HostAddress}}/api/job-postings
+Content-Type: application/json
+
+{
+  "title": "PASTE_300_CHARS_HERE",
+  "company": "Contoso"
+}
+
+### validation 4: invalid url
+POST {{JobAgents.Api_HostAddress}}/api/job-postings
+Content-Type: application/json
+
+{
+  "title": "Senior .NET Developer",
+  "company": "Contoso",
+  "url": "not-a-url"
+}
+
+### validation 5: two errors
+POST {{JobAgents.Api_HostAddress}}/api/job-postings
+Content-Type: application/json
+
+{
+  "title": "",
+  "company": "x"
+}
