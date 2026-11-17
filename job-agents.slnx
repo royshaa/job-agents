@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/JobAgents.Api/JobAgents.Api.csproj" />
+  <Project Path="tests/JobAgents.Api.Tests/JobAgents.Api.Tests.csproj" Id="7aba9a17-a692-4e23-a19b-9324bd93b3ee" />
+</Solution>
